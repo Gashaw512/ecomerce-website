@@ -1,0 +1,23 @@
+td{
+    background: lightyellow;
+    padding: 8px;
+
+}
+th{
+    background: brown;
+    color: white;
+    padding: 8px;
+
+}
+input{
+    height: 35px;
+    width: 200px;
+
+}
+button{
+    height: 30px;
+    width: 75px;
+    background: brown;
+    color: white;
+    margin: 10px;
+}

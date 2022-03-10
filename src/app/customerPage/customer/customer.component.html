@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<input type="text" #newCustomer>
+<br>
+<br>
+<button (click)="addNewCustomer(newCustomer.value); newCustomer.value=' ' ">Add New Customer</button>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>LastName</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.firstName |uppercase}}</td>
+        <td>{{customer.lastName |uppercase}}</td>
+        <td>{{customer.address | uppercase}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <button (click)="delate(customer.id)">Delate</button>
+        
+    </tr>
+</table>
