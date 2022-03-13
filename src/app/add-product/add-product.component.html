@@ -1,0 +1,117 @@
+<div style="text-align: center; margin: auto; width: 60%; padding-bottom: 12px">
+  <div><h2>Add New Product</h2></div>
+  <div>
+    <form #Form="ngForm" (ngSubmit)="addNewProduct(Form.value)">
+      <div class="mb-3 form-group">
+        <!-- <img [src]="selectedProduct.imageUrl" class="img-fluid" alt="Product" /> -->
+        <!-- <h5>Upload product image</h5>
+        <img [src]="imgUrl" alt="imageUrl" ngModel name ='imageUrl'>
+        <input type="file" (change)='onselectFile($event)' > -->
+        <label for="img" class="form-label">Product Image Address</label>
+        <input
+          required
+          ngModel
+          name="url"
+          #productImage="ngModel"
+          type="url"
+          class="form-control"
+          id="img"
+          placeholder="Enter product image address"
+          minlength="2"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="productName.touched && !productName.valid"
+        >
+          <div *ngIf="productName.errors?.['required']">
+            Product Address is required is required
+          </div>
+          <div *ngIf="productName.errors?. ['minlength']">
+            It should be address
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 form-group">
+        <label for="name" class="form-label">Product Name</label>
+        <input
+          required
+          ngModel
+          name="productName"
+          #productName="ngModel"
+          [ngModel]="createdProduct.name"
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter product Name"
+          name="name"
+          minlength="2"
+        />
+
+        <div
+          class="alert alert-danger"
+          *ngIf="productName.touched && !productName.valid"
+        >
+          <div *ngIf="productName.errors?.['required']">
+            Product name is required
+          </div>
+          <div *ngIf="productName.errors?. ['minlength']">
+            Product name should be minimum of 2 character
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 form-group">
+        <label for="price" class="form-label">Price</label>
+        <input
+          type="number"
+          required
+          minlength="0"
+          class="form-control"
+          #productPrice="ngModel"
+          id="price"
+          name="price"
+          [ngModel]="createdProduct.price"
+          placeholder="Enter price of product"
+        />
+
+        <div
+          class="alert alert-danger"
+          *ngIf="productPrice.touched && !productPrice.valid"
+        >
+          <div *ngIf="productPrice.errors?.['required']">
+            Product price is required and  It  should not be zero
+          </div>
+        </div>
+
+      </div>
+      <div class="mb-3 form-group">
+        <label for="description" class="form-label"
+          >Description about Product</label
+        >
+        <textarea
+          type="text"
+          required
+          minlength="1"
+          class="form-control"
+          id="description"
+          #productDescription="ngModel"
+          name="description"
+          placeholder="Enter description of product"
+          [ngModel]="createdProduct.description"
+        ></textarea>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="productDescription.touched && !productDescription.valid"
+        >
+          <div *ngIf="productDescription.errors?.['required']">
+            Please say something about product, Product description is required
+          </div>
+          <div *ngIf="productName.errors?. ['minlength']">
+            Product price should not be zero
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

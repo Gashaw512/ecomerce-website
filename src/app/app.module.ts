@@ -8,6 +8,10 @@ import { ProductsComponent } from './products/products.component';
 import {  NavbarComponent} from './productPage/navbar/navbar.component'
 import { FooterComponent } from './productPage/footer/footer.component';
 import { CustomerComponent } from './customerPage/customer/customer.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AddCustomerComponent } from './customerPage/add-customer/add-customer.component';
+import { EditCustomerComponent } from './customerPage/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import { CustomerComponent } from './customerPage/customer/customer.component';
     NavbarComponent,
     FooterComponent,
     CustomerComponent,
+    EditProductComponent,
+    AddProductComponent,
+    AddCustomerComponent,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,

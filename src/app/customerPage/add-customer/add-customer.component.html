@@ -1,0 +1,138 @@
+<div style="text-align: center; margin: auto; width: 60%; padding-bottom: 12px">
+    <div><h2>Add New Customer</h2></div>
+    <div>
+      <form #Form ="ngForm" (ngSubmit)="addNewCustomer(Form.value)">
+        <label for="img" class="form-label">Profile Image Address</label>
+        <input
+          required
+          ngModel
+          name="url"
+          #customerImage="ngModel"
+          type="url"
+          class="form-control"
+          id="img"
+          placeholder="Enter profile image address"
+          minlength="3"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="customerImage.touched && !customerImage.valid"
+        >
+          <div *ngIf="customerImage.errors?.['required']">
+           Your profile image is required is required
+          </div>
+          <div *ngIf="customerImage.errors?. ['minlength']">
+            It should be address
+          </div>
+          </div>
+        <div class="mb-3 form-group">
+          <label for="name" class="form-label">First Name</label>
+          <input
+            required
+            ngModel
+            name="firstName"
+            #customerFname="ngModel"
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter Your first name"
+            name="name"
+            minlength="2"
+          />
+
+          <div
+          class="alert alert-danger"
+          *ngIf="customerFname.touched && !customerFname.valid"
+        >
+          <div *ngIf="customerFname.errors?.['required']">
+           Name is required
+          </div>
+          <div *ngIf="customerFname.errors?. ['minlength']">
+           It shoul be minimum of length 2
+          </div>
+
+        </div>
+        </div>
+
+        <div class="mb-3 form-group">
+            <label for="name" class="form-label">Last Name</label>
+            <input
+              required
+              ngModel
+              name="lastName"
+              #customerLName="ngModel"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter product Name"
+              name="name"
+              minlength="2"
+            />
+            
+            <div
+          class="alert alert-danger"
+          *ngIf="customerLName.touched && !customerLName.valid"
+        >
+          <div *ngIf="customerLName.errors?.['required']">
+           Name is required
+          </div>
+          <div *ngIf="customerLName.errors?. ['minlength']">
+           It shoul be minimum of length 2
+          </div>
+
+        </div>
+
+
+       </div>
+        <div class="mb-3 form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              required
+              ngModel
+              name="phone"
+              #productName="ngModel"
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="Enter your Phone Number"
+              name="name"
+              minlength="2"
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="address" class="form-label">Address</label>
+            <input
+              required
+              ngModel
+              name="address"
+              #productName="ngModel"
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="Enter product Name"
+              
+              minlength="2"
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              required
+              ngModel
+              name="email"
+              #productName="ngModel"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter Your email"
+              
+              minlength="2"
+            />
+          </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+    </div>
+  </div>
+  

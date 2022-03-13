@@ -1,6 +1,6 @@
 // import { DESTRUCTION } from "dns";
 
-class Product {
+export class Product {
   id: number;
   name: string;
   price: number;

@@ -1,91 +1,35 @@
-<div class="container m-5 p-5 mx-auto flex" style="width: 100%">
-  <div class="mx-auto" style="width: 200px"><h1>{{title}}</h1></div>
-  <div class="row">
+<div class="container m-4 p-5 mx-auto flex" style="width: 100%; text-align: center;">
+  <div >
+    <h1>{{title}}
+      <button (click)="addNewProduct()" class="btn btn-secondary">Add new product</button>
+    </h1></div>
+  <div class="row" style="width: fit-content;">
     <div class="card" *ngFor="let product of productList" style="width: 18rem">
-      <div class="card p-4 m-8 pb-5" style="width: 18rem">
+      <div class="card p-4 m-4 pb-4" style="width: 18rem">
         <img [src]="product.imageUrl" class="card-img-top" alt="product" />
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <input [(ngModel)]="product.name" placeholder="name" />
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {{product.description}}
           </p>
-          <p class="card-text text-red" *ngIf="product.price < 100; else bellow">
+          <p class="card-text text-red" style="color: red;" *ngIf="product.price < 100; else bellow">
             $ {{ product.price }} (*On Discount)
           </p>
           <ng-template #bellow>
             <p class="card-text">$ {{ product.price }}</p>
           </ng-template>
-          <button class="btn btn-primary" (click)="onViewDetail(product.id)">
+          <!-- The view detail button shoud do  -->
+          <div style="display: flex;">
+          <button class="btn btn-primary" style="margin-right: 4px;"   (click)="onViewDetail(product.id)">
             View Details
           </button>
-
-          <p *ngIf="showDetail" > List the Detail of the product</p>
+          <button class="btn btn-primary" style="margin-left: 5px" (click)="delate(product.id)">
+           Delate
+          </button>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="card p-3 m-8" style="width: 18rem">
-      <img src="../../assets/ image.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{product.name | uppercase}}</h5>
-        <input [(ngModel)]="product.name" placeholder="name"/>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <button class="btn btn-primary" (click) = "onViewDetail(product.id)">View Details</button>
-      </div>
-    </div>
-
-    <div class="card p-3 m-8" style="width: 18rem">
-      <img [src]="product.imageUrl" class="card-img-top" alt="product" />
-      <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <button  class="btn btn-primary">View Details</button>
-      </div>
-    </div>
-
-    <div class="card p-3 m-8" style="width: 18rem">
-      <img [src]="product.imageUrl" class="card-img-top" alt="product" />
-      <div class="card-body">
-        <h5 class="card-title">{{product.name | uppercase }}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <button class="btn btn-primary">View Detail</button>
-      </div>
-    </div> -->
-
-<!-- <div class="card p-3 m-8" style="width: 18rem">
-      <img [src]="product.imageUrl" class="card-img-top" alt="product" />
-      <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">View Detail</a>
-      </div>
-    </div>
-
-    <div class="card p-3 m-8" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">pro</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div> -->

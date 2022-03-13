@@ -1,10 +1,12 @@
+<div style="width: 50%; margin: auto; text-align: center;">
 <h1>{{title}}</h1>
-<input type="text" #newCustomer>
+<!-- <input type="text" #newCustomer> -->
 <br>
 <br>
-<button (click)="addNewCustomer(newCustomer.value); newCustomer.value=' ' ">Add New Customer</button>
+<button (click)='addNewCustomer()'>Add New Customer</button>
 <table>
     <tr>
+        <th>Profile Photo</th>
         <th>First Name</th>
         <th>LastName</th>
         <th>Address</th>
@@ -12,13 +14,20 @@
         <th>Email</th>
         <th>Action</th>
     </tr>
-    <tr *ngFor="let customer of customers">
+    <tr *ngFor="let customer of customerList">
+        <td>
+            <img [src]="customer.imgURl" class="card-img-top img-thumbnail" alt="product" style="width: 50px; height: 50px;" />
+        </td>
         <td>{{customer.firstName |uppercase}}</td>
         <td>{{customer.lastName |uppercase}}</td>
         <td>{{customer.address | uppercase}}</td>
         <td>{{customer.phone}}</td>
         <td>{{customer.email}}</td>
-        <button (click)="delate(customer.id)">Delate</button>
-        
+        <div style="display: flex; color: white; font-weight: bold;">
+            <button style="margin-right: 5px; background-color: yellowgreen;" (click)="update(customer.id)">Edit</button>
+            <button (click)="delate(customer.id)" style="margin-left: 4px;">Delate</button>
+        </div>
+       
     </tr>
 </table>
+</div>

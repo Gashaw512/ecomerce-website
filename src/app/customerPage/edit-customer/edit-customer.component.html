@@ -1,0 +1,67 @@
+
+<div style="width: 50%; margin: auto; text-align: center;">
+    <h1>Edit Product Details</h1>
+    <form (ngSubmit)="updateCustomer()">
+      <div class="mb-3">
+        <img [src]="selectedCustomer.imgURl" class="img-fluid" alt="Profile photo" />
+      </div>
+      <div class="mb-3">
+        <label for="fName" class="form-label">First Name</label>
+        <input [(ngModel)]="newCustomer.firstName"
+          type="text"
+          class="form-control"
+          id="fName"
+          [placeholder]="selectedCustomer.firstName"
+        name="firstName"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="lName" class="form-label">Last Name</label>
+        <input [(ngModel)]="newCustomer.lastName"
+          type="text"
+          class="form-control"
+          id="lName"
+          [placeholder]="selectedCustomer.lastName"
+        name="lastName"/>
+      </div>
+
+      adress, phone, email
+
+      <div class="mb-3">
+        <label for="adress" class="form-label">Adress</label>
+        <input [(ngModel)]="newCustomer.address"
+          type="text"
+          class="form-control"
+          id="address"
+          [placeholder]="selectedCustomer.address"
+        name="address"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input [(ngModel)]="newCustomer.phone"
+          type="text"
+          class="form-control"
+          id="phone"
+          [placeholder]="selectedCustomer.phone"
+        name="phone"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input [(ngModel)]="newCustomer.email"
+          type="email"
+          class="form-control"
+          id="email"
+          [placeholder]="selectedCustomer.phone"
+        name="email"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+  </div>
+  
+
+
+
+  
