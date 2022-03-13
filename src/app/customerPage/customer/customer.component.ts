@@ -9,7 +9,6 @@ import { Customers } from '../customer.object';
 })
 export class CustomerComponent implements OnInit {
   title="Customer Management Page";
-
   customerList=Customers;
 
   constructor(private route:Router){};
